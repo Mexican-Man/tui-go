@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/marcusolsson/tui-go"
+	"github.com/Mexican-Man/tui-go"
 )
 
 // StyledBox is a Box with an overriden Draw method.

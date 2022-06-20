@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
+	"image"
 	"log"
 	"time"
 
-	"github.com/marcusolsson/tui-go"
+	"github.com/Mexican-Man/tui-go"
 )
 
 type post struct {
@@ -42,7 +43,7 @@ func main() {
 		))
 	}
 
-	historyScroll := tui.NewScrollArea(history)
+	historyScroll := tui.NewScrollArea(history, image.Pt(0, 0))
 	historyScroll.SetAutoscrollToBottom(true)
 
 	historyBox := tui.NewVBox(historyScroll)

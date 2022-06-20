@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/marcusolsson/tui-go"
+	"github.com/Mexican-Man/tui-go"
 )
 
 type uiTab struct {

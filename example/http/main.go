@@ -7,7 +7,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/marcusolsson/tui-go"
+	"github.com/Mexican-Man/tui-go"
 )
 
 var (

@@ -1,9 +1,10 @@
 package main
 
 import (
+	"image"
 	"log"
 
-	tui "github.com/marcusolsson/tui-go"
+	tui "github.com/Mexican-Man/tui-go"
 )
 
 var lorem = `Lorem ipsum dolor sit amet.`
@@ -13,7 +14,7 @@ func main() {
 
 	l := tui.NewLabel(lorem)
 
-	s := tui.NewScrollArea(l)
+	s := tui.NewScrollArea(l, image.Pt(0, 0))
 
 	scrollBox := tui.NewVBox(s)
 	scrollBox.SetBorder(true)
