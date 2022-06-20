@@ -14,23 +14,33 @@ type ScrollArea struct {
 
 	topLeft    image.Point
 	autoscroll bool
+
+	bounds image.Point
 }
 
 // NewScrollArea returns a new ScrollArea.
-func NewScrollArea(w Widget) *ScrollArea {
+func NewScrollArea(w Widget, b image.Point) *ScrollArea {
 	return &ScrollArea{
 		Widget: w,
+		bounds: b,
 	}
 }
 
 // MinSizeHint returns the minimum size the widget is allowed to be.
 func (s *ScrollArea) MinSizeHint() image.Point {
-	return image.Point{}
+	return image.ZP
 }
 
 // SizeHint returns the size hint of the underlying widget.
 func (s *ScrollArea) SizeHint() image.Point {
-	return image.Pt(15, 8)
+	b := s.bounds
+	if b.X == 0 {
+		b.X = s.Widget.SizeHint().X
+	}
+	if b.Y == 0 {
+		b.Y = s.Widget.SizeHint().Y
+	}
+	return b
 }
 
 // Scroll shifts the views over the content.
